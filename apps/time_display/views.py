@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from time import gmtime, strftime
 from django.shortcuts import render
 
-# Create your views here.
 def index(request):
     server_time = {
          "time": strftime("%Y-%m-%d %H:%M %p", gmtime())

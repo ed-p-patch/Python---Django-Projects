@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Random Word</title>
+    </head>
+    <body>
+        <h2>Random Word (attempt# {{count}})</h2>
+        <h1>{{id}}</h1>
+        <form action="/rand_word/" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Generate">
+        </form>
+    </body>
+</html>
