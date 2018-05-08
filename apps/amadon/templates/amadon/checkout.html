@@ -1,0 +1,11 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Thank you for your business!</h1>
+        <h3>We charged your credit card for {{request.session.cart}}</h3>
+        <h3>You have ordered {{request.session.num_items}} items so far and spent {{request.session.total}} with Amadon.com!</h3>
+        <a href="/amadon/">Go back</a>
+        <br>
+        <a href="/amadon/clear/">Clear Totals?</a>
+    </body>
+</html>
