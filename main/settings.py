@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     'apps.survey_form',
     'apps.session_words',
     'apps.amadon',
+    'apps.ninja_gold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Ninja Gold</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'ninja_gold/css/style.css' %}">
+    </head>
+    <body>
+        <div class="header-bar">
+            <h2>Your Gold:</h2><p>{{ request.session.gold }}</p>
+        </div>
+        <div class="options">
+            <div class="l farm">
+                <h2>Farm</h2>
+                <p>(earns 10-20 golds)</p>
+                <form action="/ninja_gold/process_money/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="l house">
+                <h2>House</h2>
+                <p>(earn 2-5 golds)</p>
+                <form action="/ninja_gold/process_money/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="l cave">
+                <h2>Cave</h2>
+                <p>(earns 5-10 golds)</p>
+                <form action="/ninja_gold/process_money/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="l casino">
+                <h2>Casino</h2>
+                <p>(earns 0 - 50 golds)</p>
+                <form action="/ninja_gold/process_money/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+        </div>
+        <div class="activities">
+            {% for e in request.session.events %}
+            <h3>{{e}}</h3>
+            {% endfor %}
+        </div>
+        <a href="/ninja_gold/clear/">Delete Adventure?</a>
+    </body>
+</html>

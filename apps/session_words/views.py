@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from datetime import datetime
 
-# Create your views here.
 def index(request):
     s = request.session
     if "words" not in s:

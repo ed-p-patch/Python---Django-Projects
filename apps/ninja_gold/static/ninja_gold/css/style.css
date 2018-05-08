@@ -1,0 +1,10 @@
+.header-bar{
+    display: inline-block;
+}
+.header-bar p{
+    border: solid black 5px;
+}
+.l{
+    display: inline-block;
+    border: solid black 5px;
+}

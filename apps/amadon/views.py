@@ -31,16 +31,12 @@ def clear(request):
 
 def getprice(q, id):
     price = 0
-    if id == 1015:
-        print "shirt"
+    if id == 1015: # shirt
         price = 19.99
-    elif id == 1016:
-        print "sweater"
+    elif id == 1016: # sweater
         price = 29.99
-    elif id == 1017:
-        print "mug"
+    elif id == 1017: # mug
         price = 4.99
-    elif id == 1018:
-        print "book"
+    elif id == 1018: # book
         price = 49.99
     return q * price
