@@ -1,16 +1,24 @@
 <html>
     <head>
-
+        <title>Results!</title>
     </head>
-    <body>
-        {% flash message %}
+    <body> 
+        <div class="message-wrapper">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
         <div class="wrapper">
             <h2>Submitted Information</h2>
             <h3>Name:   {{name}}</h3>
             <h3>Location:   {{location}}</h3>
-            <h3>Favorite Language:  {{}}</h3>
-            <h3>Comment:    {{}}</h3>
-            <a href="/">Go Back</a>
+            <h3>Favorite Language:  {{language}}</h3>
+            <h3>Comment:    {{comment}}</h3>
+            <a href="/survey_form/">Go Back</a>
         </div>
     </body>
 </html>

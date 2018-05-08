@@ -2,7 +2,8 @@
     <head></head>
     <body>
         <div class="wrapper">
-            <form action="/survey/process" method="POST">
+            <form action="/survey_form/process/" method="POST">
+                {% csrf_token %}
                 <label>Your Name: <input type="text" name="name"></label><br>
                 <label>Your Location: <input type="text" name="location"></label><br>
                 <label>Your Langauge: <input type="text" name="language"></label><br>
