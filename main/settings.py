@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'apps.session_words',
     'apps.amadon',
     'apps.ninja_gold',
+    'apps.user_login',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
