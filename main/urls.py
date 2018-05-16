@@ -9,5 +9,7 @@ urlpatterns = [
     url(r'^session_words/', include('apps.session_words.urls')),
     url(r'^amadon/', include('apps.amadon.urls')),
     url(r'^ninja_gold/', include('apps.ninja_gold.urls')),
+    url(r'^user_login/', include('apps.user_login.urls')),
+    url(r'^dojo_ninjas/', include('apps.dojo_ninjas.urls')),
     # url(r'^admin/', admin.site.urls)
 ]
