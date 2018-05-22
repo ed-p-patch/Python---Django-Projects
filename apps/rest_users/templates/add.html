@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Add User</title>
+    </head>
+    <body>
+        <h1>Add a new User</h1>
+        <form action="/rest_users/users/create/" method="POST">
+            {% csrf_token %}
+            <span>First name: <input type="text" name="fname"> </span>
+            <span>Last name: <input type="text" name="lname"> </span>
+            <span>Email: <input type="text" name="email"> </span>
+            <input type="submit" value="Create">
+        </form>
+        <a href="javascript:history.back()">Go Back</a>
+    </body>
+</html>

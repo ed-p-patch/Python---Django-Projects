@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Edit a user</title>
+    </head>
+    <body>
+        {% if request.session.edit %}
+        <h1>Edit User {{request.session.edit.id}}</h1>
+        <form action="/rest_users/users/update/" method="POST">
+            {% csrf_token %}
+            <span>First name: <input type="text" name="fname" value="{{request.session.edit.fname}}"> </span>
+            <span>Last name: <input type="text" name="lname" value="{{request.session.edit.lname}}"> </span>
+            <span>Email: <input type="text" name="email" value="{{request.session.edit.email}}"> </span>
+            <input hidden name="id" value="{{request.session.edit.id}}">
+            <input type="submit" value="Update user info">
+        </form>
+        {% endif %}
+        <a href="users">Show</a>
+        <a href="javascript:history.back()">Go Back</a>
+    </body>
+</html>

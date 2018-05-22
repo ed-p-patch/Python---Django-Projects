@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Table of all users</title>
+    </head>
+    <body>
+        <h1>Users</h1>
+        <table>
+            <tr>
+                <th>ID</th><th>Full Name</th><th>Email</th><th>Created At</th><th>Actions</th>
+            </tr>
+            {% if request.session.users %}
+                {% for user in request.session.users %}
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.fname}} {{user.lname}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.created_at}}</td>
+                        <td>
+                            <a href="/rest_users/users/{{user.id}}/">Show</a>
+                            <a href="/rest_users/users/{{user.id}}/edit/">Edit</a>
+                            <a href="/rest_users/users/{{user.id}}/destroy/">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+        <a href="/rest_users/users/new/">Add a new User</a>
+    </body>
+</html>

@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'apps.ninja_gold',
     'apps.user_login',
     'apps.dojo_ninjas',
+    'apps.rest_users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

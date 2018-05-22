@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>A single User</title>
+    </head>
+    <body>
+        <h1>USER {{request.session.show.id}}</h1>
+        <span>Full Name: {{request.session.show.fname}} {{request.session.show.lname}}</span>
+        <span>Email: {{request.session.show.email}}</span>
+        <span>Created at: {{request.session.show.created_at}}</span>
+        <span> <a href="edit">Edit</a> <a href="users/{{request.session.show.id}}/destroy">Delete</a> </span>
+        <a href="javascript:history.back()">Go Back</a>
+    </body>
+</html>
