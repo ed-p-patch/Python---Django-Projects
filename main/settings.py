@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'apps.user_login',
     'apps.dojo_ninjas',
     'apps.rest_users',
+    'apps.courses',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

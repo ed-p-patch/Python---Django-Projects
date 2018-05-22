@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Show Courses</title>
+    </head>
+    <body>
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <h1>Add a new Course</h1>
+        <form action="/courses/courses/add/" method="POST">
+            {% csrf_token %}
+            <span>Name: <input type="text" name="name"></span>
+            <span>Description: <textarea name="description"></textarea></span>
+            <input type="submit" value="Add">
+        </form>
+        <h1>Courses</h1>
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+            {% if request.session.courses %}
+                {% for item in request.session.courses %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.created_at}}</td>
+                    <td><a href="/courses/courses/destroy/{{item.id}}">Destroy</a></td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Destroy</title>
+    </head>
+    <body>
+        <h1>Are you sure you want to delete the following course?</h1>
+        {% if request.session.stage_delete %}
+            <span>{{request.session.stage_delete.name}} - {{request.session.stage_delete.description}}</span>
+            <form action="/courses/courses/del/{{request.session.stage_delete.id}}" method="POST">
+                {% csrf_token %}
+                <a href="/courses/courses/">No</a>
+                <input type="submit" value="Yes! I want to delete this">
+            </form>
+        {% endif %}
+    </body>
+</html>
