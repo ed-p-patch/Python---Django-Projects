@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^dojo_ninjas/', include('apps.dojo_ninjas.urls')),
     url(r'^rest_users/', include('apps.rest_users.urls')),
     url(r'^courses/', include('apps.courses.urls')),
+    url(r'^log_reg_dj/', include('apps.log_reg_dj.urls')),
     # url(r'^admin/', admin.site.urls)
 ]

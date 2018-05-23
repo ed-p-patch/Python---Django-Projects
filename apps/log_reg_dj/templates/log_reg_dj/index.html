@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Register!</h2>
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="/log_reg_dj/process/" method="POST">
+            {% csrf_token %}
+            <label>First Name:<input type="text" name="fname"></label><br>
+            <label>Last Name:<input type="text" name="lname"></label><br>
+            <label>Email:<input type="text" name="email"></label><br>
+            <label>Desired Passowrd:<input type="password" name="pass1"></label><br>
+            <label>Confirm Passowrd:<input type="password" name="pass2"></label><br>
+            <input type="submit" value="Register">
+        </form>
+        <h2>Login!</h2>
+        <form action="/log_reg_dj/logon/" method="POST">
+            {% csrf_token %}
+            <label>Email:<input type="text" name="email"></label><br>
+            <label>Password:<input type="password" name="pass"></label><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
