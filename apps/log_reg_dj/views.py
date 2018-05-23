@@ -51,7 +51,7 @@ def validate(d):
     if len(d["lname"]) < 2:
         valid = False
         messages.add_message(request, messages.INFO, "Name must be < 2")
-    if str(d["pass1"]) == str(d["pass2"]):
+    if d["pass1"] != d["pass2"]:
         valid = False
         messages.add_message(request, messages.INFO, "Please match passwords")
     if not EMAIL_REGEX.match(d["email"]):

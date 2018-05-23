@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'apps.rest_users',
     'apps.log_reg_dj',
     'apps.courses',
+    'apps.belt_re',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

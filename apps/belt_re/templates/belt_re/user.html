@@ -1,0 +1,22 @@
+<html>
+    <head></head>
+    <body>
+        <div class="nav-bar">
+            <h1>Welcome {{request.session.logged_user}}</h1>
+            <a href="/belt_re/add/">Add a book review!</a>
+            <a href="/belt_re/logout/">Logout</a>
+        </div>
+        <div>
+            <span>User Alias:{{user.alias}}</span>
+            <span>Name:{{user.name}}</span>
+            <span>Email:{{user.email}}</span>
+            <span>Total Reviews:{{user.reviewcount}}</span>
+            {% if totaluser %}
+                <h2>Posted Reviews on the following books:</h2>
+                {% for reviews in totaluser %}
+                    <a href="/belt_re/books/{{reviews.id}}">{{reviews.title}}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <div class="nav-bar">
+            <h1>Welcome {{request.session.logged_user}}</h1>
+            <a href="/belt_re/add/">Add a book review!</a>
+            <a href="/belt_re/logout/">Logout</a>     
+        </div>
+        <h1>Book:{{book.title}}</h1>
+        <h3>Author:{{book.author.name}}</h3>
+        <div>
+            <h3>Reviews:</h3>
+            {% for review in book.reviews.all %}
+            <p>Rating: {{review.rating}}</p>
+            <p>{{review.user.name}} says: {{review.content}}</p>
+            <p>Posted on {{reviews.created_at}}</p>
+                {% if review.owned %}
+                    IF USER logged_user
+                    <a href="/">DELETE THIS REVIEW</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            <h3>Add a review:</h3>
+            <form action="/belt_re/add/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="author" value="{{one_book.author}}">
+                <input type="hidden" name="title" value="{{one_book.title}}">
+                <textarea name="review"></textarea>
+                <span>Rating: <input type=DROPDOWN></span>
+                <input type="submit" value="Submit Review">
+            </form>
+        </div>
+    </body>
+</html>

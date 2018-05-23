@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^rest_users/', include('apps.rest_users.urls')),
     url(r'^courses/', include('apps.courses.urls')),
     url(r'^log_reg_dj/', include('apps.log_reg_dj.urls')),
+    url(r'^belt_re/', include('apps.belt_re.urls')),
     # url(r'^admin/', admin.site.urls)
 ]

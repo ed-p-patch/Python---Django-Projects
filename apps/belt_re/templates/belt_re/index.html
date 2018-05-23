@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Welcome!</h2>
+        <div>
+            {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            <h3>Register</h3>
+            <form action="/belt_re/register/" method="POST">
+                {% csrf_token %}
+                <span>Name:<input type="text" name="name"></span>
+                <span>Alias:<input type="text" name="alias"></span>
+                <span>email<input type="text" name="email"></span>
+                <span>Password:<input type="text" name="pass1"></span>
+                <span>* Password should be at least 8 characters</span>
+                <span>Confirm PW:<input type="text" name="pass2"></span>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div>
+            <h3>Login</h3>
+            <form action="/belt_re/login/" method="POST">
+                {% csrf_token %}
+                <span>Email:<input type="text" name="email"></span>
+                <span>Password:<input type="password" name="pass"></span>
+                <span><input type="submit" value="Login"></span>
+            </form>
+        </div>
+    </body>
+</html>

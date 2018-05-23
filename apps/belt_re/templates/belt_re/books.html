@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <div class="nav-bar">
+            <h1>Welcome {{request.session.user.name}}</h1>
+            <a href="/belt_re/add/">Add a book review!</a>
+            <a href="/belt_re/logout/">Logout</a>
+        </div>
+        <div>
+            <h2>Recent Book Reviews!</h2>
+            {% for book in recent_book_reviews %}
+            <div>
+                <a href="/belt_re/books/{{book.id}}">{{book.title}}</a>
+                <p>Rating:[STARS]</p>
+                <p>{{book.last_reviewer}} says {{book.last_review}}</p>
+                <p>Post on {{book.last_review_date}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            <h2>Other books with Reviews!</h2>
+            {% for o_books in other_book_reviews %}
+                <a href="/belt_re/books/{{book.id}}">{{o_books.title}}</a>
+            {% endfor %}
+        </div>
+    </body>
+</html>
