@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^courses/', include('apps.courses.urls')),
     url(r'^log_reg_dj/', include('apps.log_reg_dj.urls')),
     url(r'^belt_re/', include('apps.belt_re.urls')),
+    url(r'^travel_buddy/', include('apps.travel_buddy.urls')), 
     # url(r'^admin/', admin.site.urls)
 ]

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Register/Login</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/style.css' %}" />
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="welcome-page">
+            <form action="/travel_buddy/register/" method="POST">
+                <fieldset>
+                    <legend>Register!</legend>
+                    {% csrf_token %}
+                    <label>Name:<input type="text" name="name"></label>
+                    <label>Username:<input type="text" name="username"></label>
+                    <label>Password:<input type="text" name="pass1"></label>
+                    <label>Confirm PW: <input type="text" name="pass2"></label>
+                    <input type="submit" value="Register">
+                </fieldset>
+            </form>
+        </div>
+        <div class="welcome-page">
+            <form action="/travel_buddy/login/" method="POST">
+                <fieldset>
+                    <legend>Login</legend>
+                    {% csrf_token %}
+                    <label>Username: <input type="text" name="username"></label>
+                    <label>Password: <input type="password" name="pass"></label>
+                    <input type="submit" value="Login">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'apps.log_reg_dj',
     'apps.courses',
     'apps.belt_re',
+    'apps.travel_buddy',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,48 @@
+.welcome-page{
+    display:inline-block;
+    width: 25%;
+    height: auto;
+}
+.add-form{
+    width: 35%;
+    height: auto;
+}
+.add-form label{
+    display: block;
+    margin: 10px;
+}
+.add-form input{
+    float: right;
+}
+.welcome-page label{
+    display: block;
+    margin: 5px;
+}
+.welcome-page input{
+    float: right;
+}
+.nav-logout{
+    float:right;
+}
+.wrapper{
+    width: 70%;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+th{
+    background-color: gray;
+    color: white;
+    border: 1px solid black;
+}
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+tr:nth-child(even){
+    background-color: #dddddd;
+}

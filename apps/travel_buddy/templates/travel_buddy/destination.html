@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Destination</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/style.css' %}" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <a class="nav-logout" href="/travel_buddy/logout/">Logout</a>
+            <div class="trip">
+                <a href="/travel_buddy/travels/">Home</a>
+                <h2>{{trip.tripname}}</h2>
+                <p>Planned by: {{trip.created_by.name}}</p>
+                <p>Description: {{trip.description}}</p>
+                <p>Travel Date From: {{trip.tstartdate}}</p>
+                <p>Travel Date to: {{trip.tenddate}}</p>
+            </div>
+            <div class="trip">
+                <h2>Other users' joining the trip:</h2>
+                {% for u in joined %}
+                    <h2>{{u.user.name}}</h2>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

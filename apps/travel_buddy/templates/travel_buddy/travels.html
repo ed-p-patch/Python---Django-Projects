@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Travel Dashboard</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/style.css' %}" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Hello, {{user}}!</h1>
+            <a class="nav-logout" href="/travel_buddy/logout/">Logout</a>
+            {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="trip-info">
+                <h2>Your trip schedules</h2>
+                <table>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Plan</th>
+                    </tr>
+                    {% for t in user_trips %}
+                    <tr>
+                        <td><a href="/travel_buddy/travels/destination/{{t.trip.id}}/">{{t.trip.tripname}}</a></td>
+                        <td>{{t.trip.tstartdate}}</td>
+                        <td>{{t.trip.tenddate}}</td>
+                        <td>{{t.trip.description}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="trip-info">
+                <h2>Other User's Travel Plans</h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Do you want to Join?</th>
+                    </tr>
+                    {% for o in other_trips %}
+                    <tr>
+                        <td>{{o.trip.created_by.name}}</td>
+                        <td><a href="/travel_buddy/travels/destination/{{o.trip.id}}/">{{o.trip.tripname}}</a></td>
+                        <td>{{o.trip.tstartdate}}</td>
+                        <td>{{o.trip.tenddate}}</td>
+                        <td><a href="/travel_buddy/join/{{o.trip.id}}/">Join</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <h2>
+                <a class="nav-logout" href="/travel_buddy/travels/add/">Add Travel Plan</a>
+            </h2>
+        </div>
+    </body>
+</html>

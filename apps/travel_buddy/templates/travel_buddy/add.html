@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Add Plan</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/style.css' %}" />
+    </head>
+    <body>
+        <div class="add-form">
+            <a class="nav-logout" href="/travel_buddy/travels/">Home</a><br>
+            <a class="nav-logout" href="/travel_buddy/logout/">Logout</a>
+            {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            <form action="/travel_buddy/create/" method="POST">
+                <fieldset>
+                    <legend>Add a Trip</legend>
+                    {% csrf_token %}
+                    <label>Destination: <input type="text" name="destination"></label>
+                    <label>Description: <input type="text" name="description"></label>
+                    <label>Travel Date From: <input type="date" name="tstartdate"></label>
+                    <label>Travel Date To: <input type="date" name="tenddate"></label>
+                    <input type="submit" value="Add">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
